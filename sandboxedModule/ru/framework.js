@@ -13,15 +13,29 @@ var context = { module: {}, console: console, setTimeout: setTimeout, setInterva
 context.global = context;
 var sandbox = vm.createContext(context);
 // Read an application source code from the file
-var fileName = './application.js';
-fs.readFile(fileName, function(err, src) {
-  // We need to handle errors here
-  
-  // Run an application in sandboxed context
 
-  var script = vm.createScript(src, fileName);
-  script.runInNewContext(sandbox);
-  
-  // We can access a link to exported interface from sandbox.module.exports
-  // to execute, save to the cache, print to console, etc.
+
+var array;
+var begin = "./", end = ".js";
+process.argv.forEach(function(val, index) {
+
+if (index>1){
+var fileName = begin + val + end;
+// console.log(index + " : " + begin);
+// var fileName = './application.js';
+var sandbox = vm.createContext(context);
+fs.readFile(fileName, function(err, src) {
+// Тут нужно обработать ошибки
+
+// Запускаем код приложения в песочнице
+var script = vm.createScript(src, fileName);
+script.runInNewContext(sandbox);
+
+// Забираем ссылку из sandbox.module.exports, можем ее исполнить,
+// сохранить в кеш, вывести на экран исходный код приложения и т.д.
+});
+}
+
+
+
 });
