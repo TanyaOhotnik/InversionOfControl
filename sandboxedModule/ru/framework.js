@@ -11,7 +11,6 @@ var fs = require('fs'),
 // the global context of an application
 var context = { module: {}, console: console, setTimeout: setTimeout, setInterval:setInterval, clearInterval:clearInterval, util:util,
 console:{
-
 log: function(message){
 var date = new Date();
 if(process.argv.length == 3){
@@ -22,9 +21,11 @@ applicationName = "application";
 }
 var time = date.getDate() + ':' + (date.getMonth()+1) + ':' + date.getFullYear() + ' ' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
 console.log(applicationName + ' ' + time + ': ' + message);
+
+var consoleOutput = fs.appendFile("output.txt", applicationName + ' ' + time + ': ' + message + '\n', function(err, info){
+if (err) throw err;
+});
 }
-
-
 }
 };
 context.global = context;

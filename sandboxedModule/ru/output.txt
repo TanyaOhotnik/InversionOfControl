@@ -4,3 +4,9 @@ application 17:3:2016 15:53:16: hello
 application 17:3:2016 15:53:17: hello
 application 17:3:2016 15:53:18: hello
 application 17:3:2016 15:53:19: hello
+application 17:3:2016 15:57:41: From application global context
+application 17:3:2016 15:57:42: hello
+application 17:3:2016 15:57:43: hello
+application 17:3:2016 15:57:44: hello
+application 17:3:2016 15:57:45: hello
+application 17:3:2016 15:57:46: hello
