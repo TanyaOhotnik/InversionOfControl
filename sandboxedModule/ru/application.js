@@ -5,15 +5,16 @@
 // Print from the global context of application module
 console.log('From application global context');
 
-var timer = setInterval(function () { console.log('hello')}, 5000);
+var timer = setInterval(function () { console.log('hello')}, 1000);
 
-setTimeout(function () { console.log('hello') 
+setTimeout(function () { console.log('hello')
 clearInterval(timer)
-}, 1000);
+}, 5000);
 
-// util.log();
-// util.print('abc');
-// util.isArray(timer);
+util.log();
+util.print('abc');
+util.isArray(timer);
+
 module.exports = function() {
 	// Print from the exported function context
 	
