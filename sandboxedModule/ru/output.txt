@@ -10,3 +10,9 @@ application 17:3:2016 15:57:43: hello
 application 17:3:2016 15:57:44: hello
 application 17:3:2016 15:57:45: hello
 application 17:3:2016 15:57:46: hello
+application 17:3:2016 16:2:54: From application global context
+application 17:3:2016 16:2:55: hello
+application 17:3:2016 16:2:56: hello
+application 17:3:2016 16:2:57: hello
+application 17:3:2016 16:2:58: hello
+application 17:3:2016 16:2:59: hello
