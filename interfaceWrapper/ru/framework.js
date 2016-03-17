@@ -6,9 +6,19 @@ var fs = require('fs'),
 function cloneInterface(anInterface) {
     var clone = {};
     for (var key in anInterface) {
-      clone[key] = anInterface[key];
+      clone[key] = wrapFunction(key, anInterface[key]);
     }
     return clone;
+  }
+
+  function wrapFunction(fnName, fn) {
+    return function wrapper() {
+      var args = [];
+      Array.prototype.push.apply(args, arguments);
+      console.log('Call: ' + fnName);
+      console.dir(args);
+      return fn.apply(undefined, args);
+    }
   }
 // Объявляем хеш из которого сделаем контекст-песочницу
 var context = {
