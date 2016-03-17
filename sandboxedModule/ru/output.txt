@@ -1,0 +1,6 @@
+application 17:3:2016 15:53:14: From application global context
+application 17:3:2016 15:53:15: hello
+application 17:3:2016 15:53:16: hello
+application 17:3:2016 15:53:17: hello
+application 17:3:2016 15:53:18: hello
+application 17:3:2016 15:53:19: hello
