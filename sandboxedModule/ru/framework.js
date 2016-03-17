@@ -6,7 +6,7 @@
 var fs = require('fs'),
     vm = require('vm'),
     util = require('util');
-    application = require('./application.js');
+   
 
 // Create a hash and turn it into the sandboxed context which will be
 // the global context of an application
@@ -46,7 +46,9 @@ var consoleOutput = fs.appendFile("output.txt", applicationName + ' ' + time + '
 context.global = context;
 var sandbox = vm.createContext(context);
 // Read an application source code from the file
+
 var fileName = './application.js';
+
 fs.readFile(fileName, function(err, src) {
   // We need to handle errors here
   
@@ -54,9 +56,7 @@ fs.readFile(fileName, function(err, src) {
 
   var script = vm.createScript(src, fileName);
   script.runInNewContext(sandbox);
-  for(var f in sandbox.module.expots){
-  	console.log(f, typeof sandbox.module.exports[f]);
-  }
+  
   // We can access a link to exported interface from sandbox.module.exports
   // to execute, save to the cache, print to console, etc.
 

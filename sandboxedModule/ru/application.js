@@ -4,7 +4,7 @@
 
 // Print from the global context of application module
 console.log('From application global context');
-var util = require('util');
+
 var timer = setInterval(function () { console.log('hello')}, 1000);
 
 setTimeout(function () { console.log('hello')
@@ -22,7 +22,3 @@ module.exports = function() {
   console.log('From application exported function');
 };
 
-
-module.exports.fun = function() {
-	console.log("From wrapped function console.log()");
-}
