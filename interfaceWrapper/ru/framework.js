@@ -17,7 +17,12 @@ function cloneInterface(anInterface) {
       Array.prototype.push.apply(args, arguments);
       console.log('Call: ' + fnName);
       console.dir(args);
+      if(typeof(args[this.length - 1]) === 'function'){
+        statistic['callback']+=1;
+        args[args.length-1] = wrapFunction('callback',args[this]);
+      }
       return fn.apply(undefined, args);
+
     }
   }
 // Объявляем хеш из которого сделаем контекст-песочницу
